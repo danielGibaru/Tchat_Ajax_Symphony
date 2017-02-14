@@ -4,12 +4,12 @@
 <section>
 
      {% for message in messages %}
-     <h3>de:{{message.author}}:</h3>
-     {{message.text}}
+     <h3>De:{{message.author}}</h3>
+     <h3>{{message.text}}</h3>
           {% endfor %}
-     {{form_start (f,{'attr':{'action':path('envois')}})}}
+     {{form_start (formMess,{'attr':{'action':path('sendMessage')}})}}
      <input type="submit" name="" value="envoyer">
-     {{form_end (f)}}
+     {{form_end (formMess)}}
 </section>
 {% endblock %}
 
