@@ -7,7 +7,7 @@
      <h3>de:{{message.author}}:</h3>
      {{message.text}}
           {% endfor %}
-     {{form_start (f)}}
+     {{form_start (f,{'attr':{'action':path('envois')}})}}
      <input type="submit" name="" value="envoyer">
      {{form_end (f)}}
 </section>
