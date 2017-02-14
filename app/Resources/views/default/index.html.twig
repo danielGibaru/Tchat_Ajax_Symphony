@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<section>
+
+     {% for message in messages %}
+     <h3>de:{{message.author}}:</h3>
+     {{message.text}}
+          {% endfor %}
+     {{form_start (f)}}
+     <input type="submit" name="" value="envoyer">
+     {{form_end (f)}}
+</section>
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
