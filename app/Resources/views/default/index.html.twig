@@ -1,18 +1,27 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<section>
-
+<section id="contTchat">
      {% for message in messages %}
-     <h3>De:{{message.author}}</h3>
-     <h3>{{message.text}}</h3>
-          {% endfor %}
-     {{form_start (formMess,{'attr':{'action':path('sendMessage')}})}}
-     <input type="submit" name="" value="envoyer">
+        <h3>De:{{message.author}}</h3>
+        <h3>{{message.text}}</h3>
+     {% endfor %}
+     {{form_start (formMess)}}
+     <input type="button" id="btnSend" value="envoyer">
      {{form_end (formMess)}}
 </section>
+     
+{#A Bouger DANS LE CSS !!!!!!!!!!!!!
+#}
+<style>
+    #contTchat{
+        position: absolute;
+    }
+</style>
 {% endblock %}
 
-{% block stylesheets %}
-
+{% block javascripts %}
+    <script src={{ asset("js/ajax.js")}}></script>
+    <script src={{ asset("js/centrage.js")}}></script>
 {% endblock %}
+
